@@ -7,6 +7,7 @@ package com.example.cathoappfoodtruckback.service.api.controller;
 
 import com.example.cathoappfoodtruckback.service.api.model.DessertDTO;
 import com.example.cathoappfoodtruckback.service.api.model.Error;
+import com.example.cathoappfoodtruckback.service.exception.FunctionalException;
 import io.swagger.annotations.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -45,13 +46,13 @@ public interface DessertApi {
      *         or Bad request (status code 400)
      */
     @ApiOperation(value = "get all Desserts", nickname = "getDesserts", notes = "get all Desserts", response = DessertDTO.class, responseContainer = "List", tags={ "Dessert", })
-    @ApiResponses(value = { 
+    @ApiResponses(value = {
         @ApiResponse(code = 200, message = "Successful response - returns an array of `DessertDTO` entities.", response = DessertDTO.class, responseContainer = "List"),
         @ApiResponse(code = 400, message = "Bad request", response = Error.class) })
     @RequestMapping(value = "/v1/dessert/all",
-        produces = { "application/json" }, 
+        produces = { "application/json" },
         method = RequestMethod.GET)
-    default ResponseEntity<List<DessertDTO>> getDesserts() {
+    default ResponseEntity<List<DessertDTO>> getDesserts() throws FunctionalException {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
