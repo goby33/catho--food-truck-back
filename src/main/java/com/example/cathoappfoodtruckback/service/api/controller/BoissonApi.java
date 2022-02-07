@@ -7,7 +7,6 @@ package com.example.cathoappfoodtruckback.service.api.controller;
 
 import com.example.cathoappfoodtruckback.service.api.model.BoissonDTO;
 import com.example.cathoappfoodtruckback.service.api.model.Error;
-import com.example.cathoappfoodtruckback.service.exception.FunctionalException;
 import io.swagger.annotations.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -39,20 +38,20 @@ public interface BoissonApi {
     }
 
     /**
-     * GET /v1/Boisson/all : get all Boissons
+     * GET /v1/boisson/all : get all Boissons
      * get all Boissons
      *
      * @return Successful response - returns an array of &#x60;BoissonDTO&#x60; entities. (status code 200)
      *         or Bad request (status code 400)
      */
     @ApiOperation(value = "get all Boissons", nickname = "getBoissons", notes = "get all Boissons", response = BoissonDTO.class, responseContainer = "List", tags={ "Boisson", })
-    @ApiResponses(value = {
+    @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful response - returns an array of `BoissonDTO` entities.", response = BoissonDTO.class, responseContainer = "List"),
         @ApiResponse(code = 400, message = "Bad request", response = Error.class) })
     @RequestMapping(value = "/v1/boisson/all",
-        produces = { "application/json" },
+        produces = { "application/json" }, 
         method = RequestMethod.GET)
-    default ResponseEntity<List<BoissonDTO>> getBoissons() throws FunctionalException {
+    default ResponseEntity<List<BoissonDTO>> getBoissons() {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
