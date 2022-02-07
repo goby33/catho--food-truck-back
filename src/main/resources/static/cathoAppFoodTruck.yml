@@ -19,7 +19,7 @@ tags:
     description : Methods pour gerer les menus
 paths:
   #  BOISSON
-  /v1/Boisson/all:
+  /v1/boisson/all:
     summary: Path used to view all Boisson
     description: The REST endpoints/paths used to view all Boisson
     get:
