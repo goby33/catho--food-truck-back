@@ -1,14 +1,12 @@
 package com.example.cathoappfoodtruckback.service.api.model;
 
-import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.openapitools.jackson.nullable.JsonNullable;
+
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import java.util.Objects;
 
 /**
  * Standard error
@@ -113,7 +111,7 @@ public class Error  implements Serializable {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Error {\n");
-    
+
     sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
     sb.append("    errorReason: ").append(toIndentedString(errorReason)).append("\n");
     sb.append("    errorUrl: ").append(toIndentedString(errorUrl)).append("\n");
