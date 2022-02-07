@@ -1,4 +1,4 @@
-package com.example.cathoappfoodtruckback;
+package com.example.cathoappfoodtruckback.service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,0 +1,279 @@
+---
+openapi: 3.0.1
+info:
+  title: CathoAppFoodTruck
+  version: 1.0.0
+  description: API for the catho app food truck
+  contact:
+    name: Catho app food truck API Github
+    url: https://github.com/adeo/iso--print-service
+    email: martin.gobert@lacatholille.fr
+tags:
+  - name: Boisson
+    description: Methods pour gerer les boissons
+  - name: Plat
+    description: Methods pour gerer les plats
+  - name: Dessert
+    description: Methods pour gerer les dessert
+  - name: Menu
+    description : Methods pour gerer les menus
+paths:
+  #  BOISSON
+  /v1/Boisson/all:
+    summary: Path used to view all Boisson
+    description: The REST endpoints/paths used to view all Boisson
+    get:
+      tags:
+        - Boisson
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/BoissonDTO'
+          description: Successful response - returns an array of `BoissonDTO` entities.
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad request
+      operationId: getBoissons
+      summary: get all Boissons
+      description: get all Boissons
+
+  # PLAT
+  /v1/plat/all:
+    summary: Path used to view all Plats
+    description: The REST endpoints/paths used to view all Plats
+    get:
+      tags:
+        - Plat
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PlatDTO'
+          description: Successful response - returns an array of `PlatDTO` entities.
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad request
+      operationId: getPlats
+      summary: get all Plat
+      description: get all Plat
+  #Menu
+  /v1/menu/all:
+    summary: Path used to view all menu
+    description: The REST endpoints/paths used to view all menu
+    get:
+      tags:
+        - Menu
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MenuDTO'
+          description: Successful response - returns an array of `MenutDTO` entities.
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad request
+      operationId: getMenus
+      summary: get all menus
+      description: get all menus
+  #DESSERT
+  /v1/dessert/all:
+    summary: Path used to view all Desserts
+    description: The REST endpoints/paths used to view all Desserts
+    get:
+      tags:
+        - Dessert
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+
+                  $ref: '#/components/schemas/DessertDTO'
+          description: Successful response - returns an array of `DessertDTO` entities.
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad request
+      operationId: getDesserts
+      summary: get all Desserts
+      description: get all Desserts
+
+
+components:
+  schemas:
+    Error:
+      title: Error
+      description: Standard error
+      required:
+        - errorCode
+        - errorReason
+      type: object
+      properties:
+        errorCode:
+          type: string
+          readOnly: true
+        errorReason:
+          type: string
+          readOnly: true
+        errorUrl:
+          type: string
+          readOnly: true
+      example:
+        errorCode: NOT_FOUND
+        errorReason: Business Attributes for the given Id 54f08135-c6bc-49b5-b4ce-a5b7474306e3
+          doesnt exist.
+        errorUrl: https://wiki.adeo.com/pages/not_found
+    BoissonDTO:
+      title: BoissonDTO
+      description: une boisson
+      type: object
+      properties:
+        id_boisson:
+          type: integer
+          description: id of the drink
+          readOnly: true
+        nom:
+          description: name of the drink
+          type: string
+          readOnly: true
+
+        description:
+          description: description of the drink
+          type: string
+          readOnly: true
+        prix:
+          description: price of the drink
+          type: integer
+          readOnly: true
+        note:
+          description: note of the drink
+          type: integer
+          readOnly: true
+
+        url_image:
+          description: the url imagr of the drink
+          type: string
+          readOnly: true
+    PlatDTO:
+      title: PlatDTO
+      description: un Plat
+      type: object
+      properties:
+        id_boisson:
+          type: integer
+          description: id of the Plat
+          readOnly: true
+        nom:
+          description: name of the Plat
+          type: string
+          readOnly: true
+
+        description:
+          description: description of the Plat
+          type: string
+          readOnly: true
+        prix:
+          description: price of the Plat
+          type: integer
+          readOnly: true
+        note:
+          description: note of the Plat
+          type: integer
+          readOnly: true
+
+        url_image:
+          description: the url imagr of the Plat
+          type: string
+          readOnly: true
+    DessertDTO:
+      title: DessertDTO
+      description: un Dessert
+      type: object
+      properties:
+        id_boisson:
+          type: integer
+          description: id of the Dessert
+          readOnly: true
+        nom:
+          description: name of the Dessert
+          type: string
+          readOnly: true
+
+        description:
+          description: description of the Dessert
+          type: string
+          readOnly: true
+        prix:
+          description: price of the Dessert
+          type: integer
+          readOnly: true
+        note:
+          description: note of the Dessert
+          type: integer
+          readOnly: true
+
+        url_image:
+          description: the url imagr of the Dessert
+          type: string
+          readOnly: true
+    MenuDTO:
+      title: MenuDTO
+      description: un Menu
+      type: object
+      properties:
+        id_boisson:
+          type: integer
+          description: id of the Menu
+          readOnly: true
+        nom:
+          description: name of the Menu
+          type: string
+          readOnly: true
+        description:
+          description: description of the Menu
+          type: string
+          readOnly: true
+        prix:
+          description: price of the Menu
+          type: integer
+          readOnly: true
+        note:
+          description: note of the Menu
+          type: integer
+          readOnly: true
+        url_image:
+          description: the url imagr of the Menu
+          type: string
+          readOnly: true
+
+
+
+
+
+
+
+
+

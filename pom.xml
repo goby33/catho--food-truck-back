@@ -95,14 +95,14 @@
                                     <goal>generate</goal>
                                 </goals>
                                 <configuration>
-                                    <title>Easy Food Truck</title>
-                                    <inputSpec>${project.basedir}/src/main/resources/static/easy-food-truck.yml
+                                    <title>Food truck</title>
+                                    <inputSpec>${project.basedir}/src/main/resources/static/cathoAppFoodTruck.yml
                                     </inputSpec>
                                     <output>${project.basedir}</output>
                                     <generatorName>spring</generatorName>
-                                    <modelPackage>cathoappfoodtruckback.service.api.model</modelPackage>
-                                    <apiPackage>cathoappfoodtruckback.service.api.controller</apiPackage>
-                                    <invokerPackage>cathoappfoodtruckback.service.api.controller</invokerPackage>
+                                    <modelPackage>com.example.cathoappfoodtruckback.service.api.model</modelPackage>
+                                    <apiPackage>com.example.cathoappfoodtruckback.service.api.controller</apiPackage>
+                                    <invokerPackage>com.example.cathoappfoodtruckback.service.api.controller</invokerPackage>
                                     <configOptions>
                                         <serializableModel>true</serializableModel>
                                         <dateLibrary>java11</dateLibrary>
