@@ -49,7 +49,7 @@ public interface BoissonApi {
     @ApiResponses(value = {
         @ApiResponse(code = 200, message = "Successful response - returns an array of `BoissonDTO` entities.", response = BoissonDTO.class, responseContainer = "List"),
         @ApiResponse(code = 400, message = "Bad request", response = Error.class) })
-    @RequestMapping(value = "/v1/Boisson/all",
+    @RequestMapping(value = "/v1/boisson/all",
         produces = { "application/json" },
         method = RequestMethod.GET)
     default ResponseEntity<List<BoissonDTO>> getBoissons() throws FunctionalException {
