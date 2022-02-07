@@ -13,6 +13,7 @@ public class BoissonController implements BoissonApi{
 
     @Override
     public ResponseEntity<List<BoissonDTO>> getBoissons() throws FunctionalException {
+        System.out.println("boisson");
         return new ResponseEntity(null, HttpStatus.ACCEPTED);
     }
 }
