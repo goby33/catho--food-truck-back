@@ -10,17 +10,18 @@ public class Plat {
     @Column(name = "id_plat", nullable = false)
     private Integer id;
 
-    @Column(name = "nom")
-    private Integer nom;
+    @Column(name = "nom", length = 150)
+    private String nom;
 
+    @Lob
     @Column(name = "description")
-    private Integer description;
+    private String description;
 
     @Column(name = "note")
     private Integer note;
 
-    @Column(name = "url_image")
-    private Integer urlImage;
+    @Column(name = "url_image", length = 150)
+    private String urlImage;
 
     @Column(name = "prix")
     private Integer prix;
@@ -33,11 +34,11 @@ public class Plat {
         this.prix = prix;
     }
 
-    public Integer getUrlImage() {
+    public String getUrlImage() {
         return urlImage;
     }
 
-    public void setUrlImage(Integer urlImage) {
+    public void setUrlImage(String urlImage) {
         this.urlImage = urlImage;
     }
 
@@ -49,19 +50,19 @@ public class Plat {
         this.note = note;
     }
 
-    public Integer getDescription() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription(Integer description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
-    public Integer getNom() {
+    public String getNom() {
         return nom;
     }
 
-    public void setNom(Integer nom) {
+    public void setNom(String nom) {
         this.nom = nom;
     }
 

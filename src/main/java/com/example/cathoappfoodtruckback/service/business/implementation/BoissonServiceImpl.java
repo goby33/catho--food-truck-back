@@ -26,6 +26,7 @@ public class BoissonServiceImpl implements BoissonService {
         List<BoissonDTO> boissonList = new ArrayList<>();
         for (Boisson boisson: boissons){
             BoissonDTO boissonDTO = new BoissonDTO();
+            boissonDTO.setIdBoisson(boisson.getId());
             boissonDTO.setNom(boisson.getNom());
             boissonDTO.setDescription(boisson.getDescription());
             boissonDTO.setNote(boisson.getNote());

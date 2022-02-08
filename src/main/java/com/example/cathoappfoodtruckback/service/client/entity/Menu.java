@@ -23,14 +23,14 @@ public class Menu {
     @Column(name = "note")
     private Integer note;
 
-    @Column(name = "url_image")
-    private Integer urlImage;
+    @Column(name = "url_image", length = 100)
+    private String urlImage;
 
-    public Integer getUrlImage() {
+    public String getUrlImage() {
         return urlImage;
     }
 
-    public void setUrlImage(Integer urlImage) {
+    public void setUrlImage(String urlImage) {
         this.urlImage = urlImage;
     }
 
