@@ -1,3 +1,3 @@
 FROM amazoncorretto:11-alpine-jdk
-COPY target/printing-service.jar printing-service.jar
+ADD target/printing-service-*.jar /app/printing-service.jar
 ENTRYPOINT ["java","-jar","/printing-service.jar"]
