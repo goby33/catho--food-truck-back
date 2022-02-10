@@ -1,5 +1,7 @@
 package com.example.cathoappfoodtruckback.service.client.entity;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,17 +12,22 @@ public class Plat {
     @Column(name = "id_plat", nullable = false)
     private Integer id;
 
+    @Lob
     @Column(name = "nom", length = 150)
+    @Type(type = "org.hibernate.type.TextType")
     private String nom;
 
     @Lob
     @Column(name = "description")
+    @Type(type = "org.hibernate.type.TextType")
     private String description;
 
     @Column(name = "note")
     private Integer note;
 
+    @Lob
     @Column(name = "url_image", length = 150)
+    @Type(type = "org.hibernate.type.TextType")
     private String urlImage;
 
     @Column(name = "prix")
