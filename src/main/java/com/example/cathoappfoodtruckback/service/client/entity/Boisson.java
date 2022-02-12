@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Boisson {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_boisson", nullable = false)
+    @Column(name = "id", nullable = false)
     private Integer id;
 
     @Lob

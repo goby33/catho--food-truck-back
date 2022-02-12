@@ -35,6 +35,7 @@ paths:
                   $ref: '#/components/schemas/BoissonDTO'
           description: Successful response - returns an array of `BoissonDTO` entities.
         400:
+
           content:
             application/json:
               schema:

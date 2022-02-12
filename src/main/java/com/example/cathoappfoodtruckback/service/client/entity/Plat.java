@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Plat {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_plat", nullable = false)
+    @Column(name = "id", nullable = false)
     private Integer id;
 
     @Lob
