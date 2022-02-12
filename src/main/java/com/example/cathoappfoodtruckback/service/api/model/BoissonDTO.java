@@ -181,7 +181,7 @@ public class BoissonDTO  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class BoissonDTO {\n");
 
-    sb.append("    idBoisson: ").append(toIndentedString(id)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    nom: ").append(toIndentedString(nom)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    prix: ").append(toIndentedString(prix)).append("\n");
