@@ -50,7 +50,7 @@ public class BoissonDTO  implements Serializable {
   }
 
   public void setIdBoisson(Integer idBoisson) {
-    this.id = id;
+    this.id = idBoisson;
   }
 
   public BoissonDTO nom(String nom) {
