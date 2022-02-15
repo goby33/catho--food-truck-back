@@ -147,9 +147,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/UserDTO'
+                $ref: '#/components/schemas/UserDTO'
           description: Successful response - returns an array of `UserDTO` entities.
         204:
           description: No Content
@@ -159,7 +157,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
           description: Bad request
-      operationId: getuser
+      operationId: getUser
       summary: List  user
       description: Get a list of user
 
@@ -332,7 +330,8 @@ components:
           readOnly: true
         solde:
           description: note of the Menu
-          type: integer
+          type: number
+          format: double
           readOnly: true
         formation:
           description: the url imagr of the Menu
