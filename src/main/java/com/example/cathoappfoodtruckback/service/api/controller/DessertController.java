@@ -2,7 +2,6 @@ package com.example.cathoappfoodtruckback.service.api.controller;
 
 import com.example.cathoappfoodtruckback.service.api.model.DessertDTO;
 import com.example.cathoappfoodtruckback.service.business.contrat.DessertService;
-import com.example.cathoappfoodtruckback.service.client.repository.DessertRepository;
 import com.example.cathoappfoodtruckback.service.exception.FunctionalException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

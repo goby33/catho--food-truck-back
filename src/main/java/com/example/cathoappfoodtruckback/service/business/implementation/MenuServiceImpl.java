@@ -1,10 +1,7 @@
 package com.example.cathoappfoodtruckback.service.business.implementation;
 
-import com.example.cathoappfoodtruckback.service.api.model.BoissonDTO;
 import com.example.cathoappfoodtruckback.service.api.model.MenuDTO;
-import com.example.cathoappfoodtruckback.service.api.model.PlatDTO;
 import com.example.cathoappfoodtruckback.service.business.contrat.MenuService;
-import com.example.cathoappfoodtruckback.service.client.entity.Boisson;
 import com.example.cathoappfoodtruckback.service.client.entity.Menu;
 import com.example.cathoappfoodtruckback.service.client.repository.MenuRepository;
 import org.springframework.beans.factory.annotation.Autowired;
