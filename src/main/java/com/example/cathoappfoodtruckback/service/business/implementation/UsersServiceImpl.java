@@ -34,6 +34,7 @@ public class UsersServiceImpl implements UsersService {
         userDTO.setSolde(user.getSolde());
         userDTO.setNom(user.getNom());
         userDTO.setPrenom(user.getPrenom());
+        userDTO.setTocken("TODO");
         return userDTO;
     }
 }
