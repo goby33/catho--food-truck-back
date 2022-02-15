@@ -17,6 +17,8 @@ tags:
     description: Methods pour gerer les dessert
   - name: Menu
     description : Methods pour gerer les menus
+  - name: Users
+    description: Methods pour gerer les users
 paths:
   #  BOISSON
   /v1/boisson/all:
@@ -121,7 +123,45 @@ paths:
       operationId: getDesserts
       summary: get all Desserts
       description: get all Desserts
-
+  /vi/user:
+    summary: Path used to get an user
+    description: The REST endpoints/paths used to get an user
+    get:
+      tags:
+        - Users
+      parameters:
+        - name: pseudo
+          description: identifiant
+          schema:
+            type: string
+          in: header
+          required: true
+        - name: mdt
+          description: mot de passe
+          schema:
+            type: string
+          in: header
+          required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/UserDTO'
+          description: Successful response - returns an array of `UserDTO` entities.
+        204:
+          description: No Content
+        400:
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Bad request
+      operationId: getuser
+      summary: List  user
+      description: Get a list of user
 
 components:
   schemas:
@@ -266,6 +306,43 @@ components:
           type: integer
           readOnly: true
         url_image:
+          description: the url imagr of the Menu
+          type: string
+          readOnly: true
+    UserDTO:
+      title: UserDTO
+      description: un utilisateur
+      type: object
+      properties:
+        id_user:
+          type: integer
+          description: id of the Menu
+          readOnly: true
+        nom:
+          description: name of the Menu
+          type: string
+          readOnly: true
+        prenom:
+          description: description of the Menu
+          type: string
+          readOnly: true
+        url_image:
+          description: price of the Menu
+          type: string
+          readOnly: true
+        solde:
+          description: note of the Menu
+          type: integer
+          readOnly: true
+        formation:
+          description: the url imagr of the Menu
+          type: string
+          readOnly: true
+        pseudo:
+          description: the url imagr of the Menu
+          type: string
+          readOnly: true
+        tocken:
           description: the url imagr of the Menu
           type: string
           readOnly: true
