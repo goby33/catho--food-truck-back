@@ -123,7 +123,7 @@ paths:
       operationId: getDesserts
       summary: get all Desserts
       description: get all Desserts
-  /vi/user:
+  /v1/user:
     summary: Path used to get an user
     description: The REST endpoints/paths used to get an user
     get:
