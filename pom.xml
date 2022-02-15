@@ -15,9 +15,9 @@
 
     <version>1.2.3-SNAPSHOT</version>
 
-    <name>printing-service</name>
+    <name>catho-food-truck</name>
 
-    <description>printing service for Adeo</description>
+    <description>Catho App food Truck</description>
 
     <properties>
         <java.version>11</java.version>
