@@ -7,6 +7,7 @@ package com.example.cathoappfoodtruckback.service.api.controller;
 
 import com.example.cathoappfoodtruckback.service.api.model.Error;
 import com.example.cathoappfoodtruckback.service.api.model.UserDTO;
+import com.example.cathoappfoodtruckback.service.exception.FunctionalException;
 import io.swagger.annotations.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -48,14 +49,14 @@ public interface UsersApi {
      *         or Bad request (status code 400)
      */
     @ApiOperation(value = "List  user", nickname = "getuser", notes = "Get a list of user", response = UserDTO.class, responseContainer = "List", tags={ "Users", })
-    @ApiResponses(value = { 
+    @ApiResponses(value = {
         @ApiResponse(code = 200, message = "Successful response - returns an array of `UserDTO` entities.", response = UserDTO.class, responseContainer = "List"),
         @ApiResponse(code = 204, message = "No Content"),
         @ApiResponse(code = 400, message = "Bad request", response = Error.class) })
     @RequestMapping(value = "/vi/user",
-        produces = { "application/json" }, 
+        produces = { "application/json" },
         method = RequestMethod.GET)
-    default ResponseEntity<List<UserDTO>> getuser(@ApiParam(value = "identifiant" ,required=true) @RequestHeader(value="pseudo", required=true) String pseudo,@ApiParam(value = "mot de passe" ,required=true) @RequestHeader(value="mdt", required=true) String mdt) {
+    default ResponseEntity<UserDTO> getuser(@ApiParam(value = "identifiant" ,required=true) @RequestHeader(value="pseudo", required=true) String pseudo,@ApiParam(value = "mot de passe" ,required=true) @RequestHeader(value="mdt", required=true) String mdt) throws FunctionalException {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
