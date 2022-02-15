@@ -1,14 +1,11 @@
 package com.example.cathoappfoodtruckback.service.api.model;
 
-import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import org.openapitools.jackson.nullable.JsonNullable;
+
 import java.io.Serializable;
-import javax.validation.Valid;
-import javax.validation.constraints.*;
+import java.util.Objects;
 
 /**
  * un utilisateur
@@ -31,7 +28,7 @@ public class UserDTO  implements Serializable {
   private String urlImage;
 
   @JsonProperty("solde")
-  private Integer solde;
+  private Double solde;
 
   @JsonProperty("formation")
   private String formation;
@@ -122,7 +119,7 @@ public class UserDTO  implements Serializable {
     this.urlImage = urlImage;
   }
 
-  public UserDTO solde(Integer solde) {
+  public UserDTO solde(Double solde) {
     this.solde = solde;
     return this;
   }
@@ -134,11 +131,11 @@ public class UserDTO  implements Serializable {
   @ApiModelProperty(readOnly = true, value = "note of the Menu")
 
 
-  public Integer getSolde() {
+  public Double getSolde() {
     return solde;
   }
 
-  public void setSolde(Integer solde) {
+  public void setSolde(Double solde) {
     this.solde = solde;
   }
 
@@ -231,7 +228,7 @@ public class UserDTO  implements Serializable {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UserDTO {\n");
-    
+
     sb.append("    idUser: ").append(toIndentedString(idUser)).append("\n");
     sb.append("    nom: ").append(toIndentedString(nom)).append("\n");
     sb.append("    prenom: ").append(toIndentedString(prenom)).append("\n");
