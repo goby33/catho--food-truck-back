@@ -19,8 +19,21 @@ public class UsersServiceImpl implements UsersService {
     public UserDTO getUser(String pseudo, String mdp) throws FunctionalException {
         Optional<User> userOptional = userRepository.findAllByPseudoAndMdp(pseudo, mdp);
         if (userOptional.isEmpty()) {
-            throw new FunctionalException("sk,nvosfnbv");
+            return null;
         }
-        return new UserDTO();
+        return this.toEntity(userOptional.get());
+    }
+
+
+    public UserDTO toEntity(User user) {
+        UserDTO userDTO = new UserDTO();
+        userDTO.setIdUser(user.getId());
+        userDTO.setPseudo(user.getPseudo());
+        userDTO.setFormation(user.getFormation());
+        userDTO.setUrlImage(user.getUrlImage());
+        userDTO.setSolde(user.getSolde());
+        userDTO.setNom(user.getNom());
+        userDTO.setPrenom(user.getPrenom());
+        return userDTO;
     }
 }
