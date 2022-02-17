@@ -6,7 +6,7 @@ info:
   description: API for the catho app food truck
   contact:
     name: Catho app food truck API Github
-    url: https://github.com/adeo/iso--print-service
+    url: https://github.com/goby33/catho--food-truck-back
     email: martin.gobert@lacatholille.fr
 tags:
   - name: Boisson
@@ -184,7 +184,7 @@ components:
         errorCode: NOT_FOUND
         errorReason: Business Attributes for the given Id 54f08135-c6bc-49b5-b4ce-a5b7474306e3
           doesnt exist.
-        errorUrl: https://wiki.adeo.com/pages/not_found
+        errorUrl: https://wiki.google.com/pages/not_found
     BoissonDTO:
       title: BoissonDTO
       description: une boisson
