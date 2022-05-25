@@ -15,21 +15,21 @@ import java.util.Objects;
  */
 @ApiModel(description = "une reponse boissonDTO")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
-public class ResponseBoissonDTO  implements Serializable {
+public class ResponseDessertDTO  implements Serializable {
   private static final long serialVersionUID = 1L;
 
   @JsonProperty("data")
   @Valid
-  private List<BoissonDTO> data = null;
+  private List<DessertDTO> data = null;
 
-  public ResponseBoissonDTO data(List<BoissonDTO> data) {
+  public ResponseDessertDTO data(List<DessertDTO> data) {
     this.data = data;
     return this;
   }
 
-  public ResponseBoissonDTO addDataItem(BoissonDTO dataItem) {
+  public ResponseDessertDTO addDataItem(DessertDTO dataItem) {
     if (this.data == null) {
-      this.data = new ArrayList<BoissonDTO>();
+      this.data = new ArrayList<DessertDTO>();
     }
     this.data.add(dataItem);
     return this;
@@ -43,11 +43,11 @@ public class ResponseBoissonDTO  implements Serializable {
 
   @Valid
 
-  public List<BoissonDTO> getData() {
+  public List<DessertDTO> getData() {
     return data;
   }
 
-  public void setData(List<BoissonDTO> data) {
+  public void setData(List<DessertDTO> data) {
     this.data = data;
   }
 
@@ -60,8 +60,8 @@ public class ResponseBoissonDTO  implements Serializable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ResponseBoissonDTO responseBoissonDTO = (ResponseBoissonDTO) o;
-    return Objects.equals(this.data, responseBoissonDTO.data);
+    ResponseDessertDTO responseDessertDTO = (ResponseDessertDTO) o;
+    return Objects.equals(this.data, responseDessertDTO.data);
   }
 
   @Override
@@ -72,7 +72,7 @@ public class ResponseBoissonDTO  implements Serializable {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ResponseBoissonDTO {\n");
+    sb.append("class ResponseDessertDTO {\n");
 
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("}");

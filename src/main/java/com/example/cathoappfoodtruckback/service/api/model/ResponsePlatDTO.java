@@ -11,25 +11,25 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * une reponse boissonDTO
+ * une reponse ResponsePlatDTO
  */
-@ApiModel(description = "une reponse boissonDTO")
+@ApiModel(description = "une reponse ResponsePlatDTO")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
-public class ResponseBoissonDTO  implements Serializable {
+public class ResponsePlatDTO  implements Serializable {
   private static final long serialVersionUID = 1L;
 
   @JsonProperty("data")
   @Valid
-  private List<BoissonDTO> data = null;
+  private List<PlatDTO> data = null;
 
-  public ResponseBoissonDTO data(List<BoissonDTO> data) {
+  public ResponsePlatDTO data(List<PlatDTO> data) {
     this.data = data;
     return this;
   }
 
-  public ResponseBoissonDTO addDataItem(BoissonDTO dataItem) {
+  public ResponsePlatDTO addDataItem(PlatDTO dataItem) {
     if (this.data == null) {
-      this.data = new ArrayList<BoissonDTO>();
+      this.data = new ArrayList<PlatDTO>();
     }
     this.data.add(dataItem);
     return this;
@@ -43,11 +43,11 @@ public class ResponseBoissonDTO  implements Serializable {
 
   @Valid
 
-  public List<BoissonDTO> getData() {
+  public List<PlatDTO> getData() {
     return data;
   }
 
-  public void setData(List<BoissonDTO> data) {
+  public void setData(List<PlatDTO> data) {
     this.data = data;
   }
 
@@ -60,8 +60,8 @@ public class ResponseBoissonDTO  implements Serializable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ResponseBoissonDTO responseBoissonDTO = (ResponseBoissonDTO) o;
-    return Objects.equals(this.data, responseBoissonDTO.data);
+    ResponsePlatDTO responsePlatDTO = (ResponsePlatDTO) o;
+    return Objects.equals(this.data, responsePlatDTO.data);
   }
 
   @Override
@@ -72,7 +72,7 @@ public class ResponseBoissonDTO  implements Serializable {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ResponseBoissonDTO {\n");
+    sb.append("class ResponsePlatDTO {\n");
 
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("}");

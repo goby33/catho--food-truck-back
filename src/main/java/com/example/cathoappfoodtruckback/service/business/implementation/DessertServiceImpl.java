@@ -1,6 +1,7 @@
 package com.example.cathoappfoodtruckback.service.business.implementation;
 
 import com.example.cathoappfoodtruckback.service.api.model.DessertDTO;
+import com.example.cathoappfoodtruckback.service.api.model.ResponseDessertDTO;
 import com.example.cathoappfoodtruckback.service.business.contrat.DessertService;
 import com.example.cathoappfoodtruckback.service.client.entity.Dessert;
 import com.example.cathoappfoodtruckback.service.client.repository.DessertRepository;
@@ -15,8 +16,11 @@ public class DessertServiceImpl implements DessertService {
     @Autowired
     DessertRepository dessertRepository;
 
-    public List<DessertDTO> getDesserts() {
-        return this.toDTOdesserts(dessertRepository.findAll());
+    public ResponseDessertDTO getDesserts() {
+        ResponseDessertDTO responseDessertDTO = new ResponseDessertDTO();
+        List<DessertDTO> dessertDTOS = this.toDTOdesserts(dessertRepository.findAll());
+        responseDessertDTO.setData(dessertDTOS);
+        return responseDessertDTO;
 
     }
 

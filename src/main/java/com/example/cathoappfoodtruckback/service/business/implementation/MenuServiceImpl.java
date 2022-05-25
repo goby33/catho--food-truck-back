@@ -1,6 +1,7 @@
 package com.example.cathoappfoodtruckback.service.business.implementation;
 
 import com.example.cathoappfoodtruckback.service.api.model.MenuDTO;
+import com.example.cathoappfoodtruckback.service.api.model.ResponseMenuDTO;
 import com.example.cathoappfoodtruckback.service.business.contrat.MenuService;
 import com.example.cathoappfoodtruckback.service.client.entity.Menu;
 import com.example.cathoappfoodtruckback.service.client.repository.MenuRepository;
@@ -16,8 +17,12 @@ public class MenuServiceImpl implements MenuService {
     @Autowired
     MenuRepository menuRepository;
 
-    public List<MenuDTO> getMenus() {
-        return this.toDTOmenu(menuRepository.findAll());
+    public ResponseMenuDTO getMenus()
+    {
+        List<MenuDTO> menuDTOS = this.toDTOmenu(menuRepository.findAll());
+        ResponseMenuDTO responseMenuDTO = new ResponseMenuDTO();
+        responseMenuDTO.setData(menuDTOS);
+        return responseMenuDTO;
     }
 
 

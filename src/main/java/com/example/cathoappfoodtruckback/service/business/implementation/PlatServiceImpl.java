@@ -1,6 +1,7 @@
 package com.example.cathoappfoodtruckback.service.business.implementation;
 
 import com.example.cathoappfoodtruckback.service.api.model.PlatDTO;
+import com.example.cathoappfoodtruckback.service.api.model.ResponsePlatDTO;
 import com.example.cathoappfoodtruckback.service.business.contrat.PlatService;
 import com.example.cathoappfoodtruckback.service.client.entity.Plat;
 import com.example.cathoappfoodtruckback.service.client.repository.PlatRepository;
@@ -15,8 +16,11 @@ public class PlatServiceImpl implements PlatService {
     @Autowired
     PlatRepository platRepository;
 
-    public List<PlatDTO> getPlats() {
-        return this.toDTOplat(platRepository.findAll());
+    public ResponsePlatDTO getPlats() {
+        List<PlatDTO> platDTOList = this.toDTOplat(platRepository.findAll());
+        ResponsePlatDTO platDTO = new ResponsePlatDTO();
+        platDTO.setData(platDTOList);
+        return platDTO;
     }
 
 

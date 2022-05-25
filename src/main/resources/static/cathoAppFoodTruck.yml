@@ -32,9 +32,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/BoissonDTO'
+                  $ref: '#/components/schemas/ResponseBoissonDTO'
           description: Successful response - returns an array of `BoissonDTO` entities.
         400:
 
@@ -59,9 +57,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/PlatDTO'
+                  $ref: '#/components/schemas/ResponsePlatDTO'
           description: Successful response - returns an array of `PlatDTO` entities.
         400:
           content:
@@ -84,9 +80,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/MenuDTO'
+                  $ref: '#/components/schemas/ResponseMenuDTO'
           description: Successful response - returns an array of `MenutDTO` entities.
         400:
           content:
@@ -109,10 +103,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-
-                  $ref: '#/components/schemas/DessertDTO'
+                $ref: '#/components/schemas/ResponseDessertDTO'
           description: Successful response - returns an array of `DessertDTO` entities.
         400:
           content:
@@ -355,6 +346,38 @@ components:
             $ref: '#/components/schemas/BoissonDTO'
           description: id of the Menu
           readOnly: true
+    ResponseDessertDTO:
+      title: ResponseDessertDTO
+      description: une reponse boissonDTO
+      type: object
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/DessertDTO'
+          description: id of the Menu
+          readOnly: true
+
+    ResponseMenuDTO:
+      title: ResponseMenuDTO
+      description: une reponse ResponseMenuDTO
+      type: object
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/MenuDTO'
+          description: id of the Menu
+          readOnly: true
+    ResponsePlatDTO:
+      title: ResponsePlatDTO
+      description: une reponse ResponsePlatDTO
+      type: object
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/PlatDTO'
+          description: id of the Menu
+          readOnly: true
+
 
 
 

@@ -11,25 +11,25 @@ import java.util.List;
 import java.util.Objects;
 
 /**
- * une reponse boissonDTO
+ * une reponse ResponseMenuDTO
  */
-@ApiModel(description = "une reponse boissonDTO")
+@ApiModel(description = "une reponse ResponseMenuDTO")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen")
-public class ResponseBoissonDTO  implements Serializable {
+public class ResponseMenuDTO  implements Serializable {
   private static final long serialVersionUID = 1L;
 
   @JsonProperty("data")
   @Valid
-  private List<BoissonDTO> data = null;
+  private List<MenuDTO> data = null;
 
-  public ResponseBoissonDTO data(List<BoissonDTO> data) {
+  public ResponseMenuDTO data(List<MenuDTO> data) {
     this.data = data;
     return this;
   }
 
-  public ResponseBoissonDTO addDataItem(BoissonDTO dataItem) {
+  public ResponseMenuDTO addDataItem(MenuDTO dataItem) {
     if (this.data == null) {
-      this.data = new ArrayList<BoissonDTO>();
+      this.data = new ArrayList<MenuDTO>();
     }
     this.data.add(dataItem);
     return this;
@@ -43,11 +43,11 @@ public class ResponseBoissonDTO  implements Serializable {
 
   @Valid
 
-  public List<BoissonDTO> getData() {
+  public List<MenuDTO> getData() {
     return data;
   }
 
-  public void setData(List<BoissonDTO> data) {
+  public void setData(List<MenuDTO> data) {
     this.data = data;
   }
 
@@ -60,8 +60,8 @@ public class ResponseBoissonDTO  implements Serializable {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ResponseBoissonDTO responseBoissonDTO = (ResponseBoissonDTO) o;
-    return Objects.equals(this.data, responseBoissonDTO.data);
+    ResponseMenuDTO responseMenuDTO = (ResponseMenuDTO) o;
+    return Objects.equals(this.data, responseMenuDTO.data);
   }
 
   @Override
@@ -72,7 +72,7 @@ public class ResponseBoissonDTO  implements Serializable {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ResponseBoissonDTO {\n");
+    sb.append("class ResponseMenuDTO {\n");
 
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("}");
