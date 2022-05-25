@@ -345,6 +345,17 @@ components:
           description: the url imagr of the Menu
           type: string
           readOnly: true
+    ResponseBoissonDTO:
+      title: ResponseBoissonDTO
+      description: une reponse boissonDTO
+      type: object
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/BoissonDTO'
+          description: id of the Menu
+          readOnly: true
+
 
 
 

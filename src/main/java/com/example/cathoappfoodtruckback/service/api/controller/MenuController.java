@@ -16,7 +16,7 @@ public class MenuController implements MenuApi{
     @Autowired
     MenuService menuService;
     @Override
-    public ResponseEntity<List<MenuDTO>> getMenus() throws FunctionalException {
+    public ResponseEntity<List<MenuDTO>> getMenus()  {
         List<MenuDTO> menuDTOS = menuService.getMenus();
         return new ResponseEntity(menuDTOS, HttpStatus.ACCEPTED);
     }

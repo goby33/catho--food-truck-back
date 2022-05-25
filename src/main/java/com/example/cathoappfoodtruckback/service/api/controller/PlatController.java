@@ -17,7 +17,7 @@ public class PlatController implements PlatApi {
     PlatService platService;
 
     @Override
-    public ResponseEntity<List<PlatDTO>> getPlats() throws FunctionalException {
+    public ResponseEntity<List<PlatDTO>> getPlats()  {
         List<PlatDTO> platDTOS = platService.getPlats();
         return new ResponseEntity(platDTOS, HttpStatus.ACCEPTED);
     }

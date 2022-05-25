@@ -15,8 +15,8 @@ import java.util.Objects;
 public class BoissonDTO  implements Serializable {
   private static final long serialVersionUID = 1L;
 
-  @JsonProperty("id")
-  private Integer id;
+  @JsonProperty("id_boisson")
+  private Integer idBoisson;
 
   @JsonProperty("nom")
   private String nom;
@@ -33,8 +33,8 @@ public class BoissonDTO  implements Serializable {
   @JsonProperty("url_image")
   private String urlImage;
 
-  public BoissonDTO id(Integer id) {
-    this.id = id;
+  public BoissonDTO idBoisson(Integer idBoisson) {
+    this.idBoisson = idBoisson;
     return this;
   }
 
@@ -46,11 +46,11 @@ public class BoissonDTO  implements Serializable {
 
 
   public Integer getIdBoisson() {
-    return id;
+    return idBoisson;
   }
 
   public void setIdBoisson(Integer idBoisson) {
-    this.id = idBoisson;
+    this.idBoisson = idBoisson;
   }
 
   public BoissonDTO nom(String nom) {
@@ -163,7 +163,7 @@ public class BoissonDTO  implements Serializable {
       return false;
     }
     BoissonDTO boissonDTO = (BoissonDTO) o;
-    return Objects.equals(this.id, boissonDTO.id) &&
+    return Objects.equals(this.idBoisson, boissonDTO.idBoisson) &&
         Objects.equals(this.nom, boissonDTO.nom) &&
         Objects.equals(this.description, boissonDTO.description) &&
         Objects.equals(this.prix, boissonDTO.prix) &&
@@ -173,7 +173,7 @@ public class BoissonDTO  implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, nom, description, prix, note, urlImage);
+    return Objects.hash(idBoisson, nom, description, prix, note, urlImage);
   }
 
   @Override
@@ -181,7 +181,7 @@ public class BoissonDTO  implements Serializable {
     StringBuilder sb = new StringBuilder();
     sb.append("class BoissonDTO {\n");
 
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    idBoisson: ").append(toIndentedString(idBoisson)).append("\n");
     sb.append("    nom: ").append(toIndentedString(nom)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    prix: ").append(toIndentedString(prix)).append("\n");

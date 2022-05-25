@@ -16,7 +16,7 @@ public class DessertController implements DessertApi{
     @Autowired
     DessertService dessertService;
     @Override
-    public ResponseEntity<List<DessertDTO>> getDesserts() throws FunctionalException {
+    public ResponseEntity<List<DessertDTO>> getDesserts()  {
         List<DessertDTO> dessertDTOS = dessertService.getDesserts();
         return new ResponseEntity(dessertDTOS, HttpStatus.ACCEPTED);
     }
