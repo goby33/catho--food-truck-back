@@ -1,6 +1,7 @@
 package com.example.cathoappfoodtruckback.service.business.implementation;
 
 import com.example.cathoappfoodtruckback.service.api.model.BoissonDTO;
+import com.example.cathoappfoodtruckback.service.api.model.ResponseBoissonDTO;
 import com.example.cathoappfoodtruckback.service.business.contrat.BoissonService;
 import com.example.cathoappfoodtruckback.service.client.entity.Boisson;
 import com.example.cathoappfoodtruckback.service.client.repository.BoissonRepository;
@@ -16,8 +17,12 @@ public class BoissonServiceImpl implements BoissonService {
     @Autowired
     BoissonRepository boissonRepository;
 
-    public List<BoissonDTO> getBoisson() {
-        return this.toDTOBoisson(boissonRepository.findAll());
+    public ResponseBoissonDTO getBoisson() {
+        List<BoissonDTO> boissonDTOList = this.toDTOBoisson(boissonRepository.findAll());
+        ResponseBoissonDTO responseBoissonDTO = new ResponseBoissonDTO();
+        responseBoissonDTO.setData(boissonDTOList);
+
+        return responseBoissonDTO;
     }
 
 

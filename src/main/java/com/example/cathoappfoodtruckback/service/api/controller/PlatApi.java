@@ -7,20 +7,26 @@ package com.example.cathoappfoodtruckback.service.api.controller;
 
 import com.example.cathoappfoodtruckback.service.api.model.Error;
 import com.example.cathoappfoodtruckback.service.api.model.PlatDTO;
-import com.example.cathoappfoodtruckback.service.exception.FunctionalException;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiResponse;
-import io.swagger.annotations.ApiResponses;
+import io.swagger.annotations.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.context.request.NativeWebRequest;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.validation.Valid;
+import javax.validation.constraints.*;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Validated
@@ -39,13 +45,13 @@ public interface PlatApi {
      *         or Bad request (status code 400)
      */
     @ApiOperation(value = "get all Plat", nickname = "getPlats", notes = "get all Plat", response = PlatDTO.class, responseContainer = "List", tags={ "Plat", })
-    @ApiResponses(value = {
+    @ApiResponses(value = { 
         @ApiResponse(code = 200, message = "Successful response - returns an array of `PlatDTO` entities.", response = PlatDTO.class, responseContainer = "List"),
         @ApiResponse(code = 400, message = "Bad request", response = Error.class) })
     @RequestMapping(value = "/v1/plat/all",
-        produces = { "application/json" },
+        produces = { "application/json" }, 
         method = RequestMethod.GET)
-    default ResponseEntity<List<PlatDTO>> getPlats() throws FunctionalException {
+    default ResponseEntity<List<PlatDTO>> getPlats() {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
