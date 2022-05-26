@@ -212,7 +212,7 @@ components:
       description: un Plat
       type: object
       properties:
-        id_boisson:
+        id:
           type: integer
           description: id of the Plat
           readOnly: true
@@ -243,7 +243,7 @@ components:
       description: un Dessert
       type: object
       properties:
-        id_boisson:
+        id:
           type: integer
           description: id of the Dessert
           readOnly: true
@@ -274,7 +274,7 @@ components:
       description: un Menu
       type: object
       properties:
-        id_boisson:
+        id:
           type: integer
           description: id of the Menu
           readOnly: true
