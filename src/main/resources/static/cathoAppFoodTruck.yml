@@ -181,7 +181,7 @@ components:
       description: une boisson
       type: object
       properties:
-        id_boisson:
+        id:
           type: integer
           description: id of the drink
           readOnly: true
