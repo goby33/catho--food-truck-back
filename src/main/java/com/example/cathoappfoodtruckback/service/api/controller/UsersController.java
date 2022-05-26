@@ -19,3 +19,4 @@ public class UsersController implements UsersApi{
         return new ResponseEntity(user, HttpStatus.ACCEPTED);
     }
 }
+
