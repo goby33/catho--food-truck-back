@@ -31,7 +31,7 @@ public class MenuServiceImpl implements MenuService {
         List<MenuDTO> boissonList = new ArrayList<>();
         for (Menu menu: menus){
             MenuDTO menuDTO = new MenuDTO();
-            menuDTO.setIdBoisson(menu.getId());
+            menuDTO.setId(menu.getId());
             menuDTO.setNom(menu.getNom());
             menuDTO.setDescription(menu.getDescription());
             menuDTO.setNote(menu.getNote());

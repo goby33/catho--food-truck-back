@@ -29,7 +29,7 @@ public class PlatServiceImpl implements PlatService {
         List<PlatDTO> platDTOS = new ArrayList<>();
         for (Plat plat: plats){
             PlatDTO platDTO = new PlatDTO();
-            platDTO.setIdBoisson(plat.getId());
+            platDTO.setId(plat.getId());
             platDTO.setNom(plat.getNom());
             platDTO.setDescription(plat.getDescription());
             platDTO.setNote(plat.getNote());

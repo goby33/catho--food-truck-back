@@ -29,7 +29,7 @@ public class DessertServiceImpl implements DessertService {
         List<DessertDTO> dessertDTOS = new ArrayList<>();
         for (Dessert dessert: desserts){
             DessertDTO dessertDTO = new DessertDTO();
-            dessertDTO.setIdBoisson(dessert.getId());
+            dessertDTO.setId(dessert.getId());
             dessertDTO.setNom(dessert.getNom());
             dessertDTO.setDescription(dessert.getDescription());
             dessertDTO.setNote(dessert.getNote());
