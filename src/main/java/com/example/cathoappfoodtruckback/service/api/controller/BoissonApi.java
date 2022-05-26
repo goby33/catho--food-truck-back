@@ -47,7 +47,7 @@ public interface BoissonApi {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"data\" : [ { \"note\" : 1, \"id_boisson\" : 0, \"prix\" : 6, \"description\" : \"description\", \"nom\" : \"nom\", \"url_image\" : \"url_image\" }, { \"note\" : 1, \"id_boisson\" : 0, \"prix\" : 6, \"description\" : \"description\", \"nom\" : \"nom\", \"url_image\" : \"url_image\" } ] }";
+                    String exampleString = "{ \"data\" : [ { \"note\" : 1, \"prix\" : 6, \"description\" : \"description\", \"id\" : 0, \"nom\" : \"nom\", \"url_image\" : \"url_image\" }, { \"note\" : 1, \"prix\" : 6, \"description\" : \"description\", \"id\" : 0, \"nom\" : \"nom\", \"url_image\" : \"url_image\" } ] }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }

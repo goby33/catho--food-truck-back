@@ -7,7 +7,6 @@ package com.example.cathoappfoodtruckback.service.api.controller;
 
 import com.example.cathoappfoodtruckback.service.api.model.Error;
 import com.example.cathoappfoodtruckback.service.api.model.UserDTO;
-import com.example.cathoappfoodtruckback.service.exception.FunctionalException;
 import io.swagger.annotations.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -46,7 +45,7 @@ public interface UsersApi {
         value = "/v1/user",
         produces = { "application/json" }
     )
-    default ResponseEntity<UserDTO> getUser(@ApiParam(value = "identifiant" ,required=true) @RequestHeader(value="pseudo", required=true) String pseudo,@ApiParam(value = "mot de passe" ,required=true) @RequestHeader(value="mdt", required=true) String mdt) throws FunctionalException {
+    default ResponseEntity<UserDTO> getUser(@ApiParam(value = "identifiant" ,required=true) @RequestHeader(value="pseudo", required=true) String pseudo,@ApiParam(value = "mot de passe" ,required=true) @RequestHeader(value="mdt", required=true) String mdt) {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
